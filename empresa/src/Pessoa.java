@@ -9,12 +9,12 @@ public class Pessoa {
 
     // Métodos
     public void apresentar() {
-        System.out.println("Olá, meu nome é " + this.nome + " e tenho " + this.idade + "anos.");
+        System.out.println("Olá, meu nome é " + this.nome + " e tenho " + this.idade + " anos.");
     }
 
     public void fazerAniversario() {
         this.idade++;   // Incrementa a idade
-        System.out.println("Feliz aniversário, " + this.nome + "! Agora você tem " + this.idade + "anos.");
+        System.out.println("Feliz aniversário, " + this.nome + "! Agora você tem " + this.idade + " anos.");
     }
 
     public void atualizarEmail(String novoEmail) {
@@ -24,11 +24,11 @@ public class Pessoa {
 
     public String exibirDados() {
         // \n significa quebra de linha
-        return "Nome:" + this.nome +
-                "\nIdade:" + this.idade +
-                "\nCPF:" + this.cpf +
-                "\nE-mail:" + this.email +
-                "\nTelefone:" + this.telefone;
+        return "Nome: " + this.nome +
+                "\nIdade: " + this.idade +
+                "\nCPF: " + this.cpf +
+                "\nE-mail: " + this.email +
+                "\nTelefone: " + this.telefone;
 
     }
 }
