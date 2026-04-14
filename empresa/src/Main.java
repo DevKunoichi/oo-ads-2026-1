@@ -117,9 +117,9 @@ public class Main {
     }
 
     public static void teste03() {
-        ContaBancaria c1 = new ContaBancaria("Adamastor Asdrúbal", 300.00);
-        ContaBancaria c2 = new ContaBancaria("Marieta Moraes", 450.00);
-        ContaBancaria c3 = new ContaBancaria("Pedrolino Pereira", 280.00);
+        ContaBancaria c1 = new ContaBancaria(123,"Adamastor Asdrúbal", 300.00);
+        ContaBancaria c2 = new ContaBancaria(456, "Marieta Moraes", 450.00);
+        ContaBancaria c3 = new ContaBancaria(789, "Pedrolino Pereira", 280.00);
 
         c1.depositar(150.00);
         c2.depositar(78.00);
@@ -135,9 +135,9 @@ public class Main {
 
         System.out.println("*".repeat(80));
 
-        ContaEspecial ce1 = new ContaEspecial("Bertolino Borges", 500.00, 2000.00);
-        ContaEspecial ce2 = new ContaEspecial("Jeruza Junqueira", 800.00, 1500.00);
-        ContaEspecial ce3 = new ContaEspecial("Orozina Oliveira", 1000.00, 1000.00);
+        ContaEspecial ce1 = new ContaEspecial(1234, "Bertolino Borges", 500.00, 2000.00);
+        ContaEspecial ce2 = new ContaEspecial(5678, "Jeruza Junqueira", 800.00, 1500.00);
+        ContaEspecial ce3 = new ContaEspecial(9012, "Orozina Oliveira", 1000.00, 1000.00);
 
         ce1.exibirSaldo();
         ce1.exibirSaldoReal();
@@ -229,7 +229,7 @@ public class Main {
     }
 
     public static void teste04() {
-        ContaBancaria c1 = new ContaBancaria("Zeferino Zacarias", 500.00);
+        ContaBancaria c1 = new ContaBancaria(987, "Zeferino Zacarias", 500.00);
         c1.exibirSaldo();
 
         c1.sacar(350.00);
@@ -244,7 +244,10 @@ public class Main {
         c1.depositar(200.00);
         c1.exibirSaldo();
 
-        ContaBancaria c2 = new ContaBancaria("Yuri Yamashita", -850.00);
+        ContaBancaria c2 = new ContaBancaria(654, "Yuri Yamashita", 850.00);
         c2.exibirSaldo();
+
+        c2.setNumConta(40);
+        System.out.println("Conta de %s agora tem o número %d.".formatted(c2.titular, c2.getNumConta()));
     }
 }
