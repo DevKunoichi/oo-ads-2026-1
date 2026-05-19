@@ -48,5 +48,22 @@ public class Main {
 
         System.out.println("-".repeat(80));
 
+        Notebook n1 = new Notebook(
+                "Notebook gamer",                   // descrição
+                "Alienware",                        // marca
+                6000.0,                             // preço base
+                25.0,                               // altura
+                320.0,                              // largura
+                210.0,                              // profundidade
+                900.0,                              // peso
+                5.5,                                // consumo em watts
+                "Intel Core i9 13ª geração",        //
+                32,                                 // memória RAM em GB
+                2048                                // armazenamento em GB
+        );
+
+        n1.setTipoPlacaVideo("dedicada");
+        n1.exibir();
+
     }
 }
