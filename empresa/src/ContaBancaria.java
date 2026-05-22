@@ -3,11 +3,12 @@ public class ContaBancaria {
     // Atributos
     // Protected: apenas classes do mesmo pacote têm acesso
     private Integer numConta;
-    private String titular;
+    //private String titular;
+    private Pessoa titular;
     private Double saldo = 0.0;
 
     // Construtor personalizado
-    public ContaBancaria(Integer numConta, String titular, Double saldoInicial) {
+    public ContaBancaria(Integer numConta, Pessoa titular, Double saldoInicial) {
         //this.numConta = numConta;
         this.setNumConta(numConta);
         //this.titular = titular;
@@ -30,12 +31,14 @@ public class ContaBancaria {
         this.numConta = novoNumConta;
     }
 
-    public String getTitular() {
+    public Pessoa getTitular() {
         return this.titular;
     }
 
-    public void setTitular(String novoTitular) {
-        // Este é um exemplo de setter sem validações
+    public void setTitular(Pessoa novoTitular) {
+        if(novoTitular.getIdade() < 18) {
+            throw new IllegalArgumentException("O titular da conta deve ser maior de idade.");
+        }
         this.titular = novoTitular;
     }
 
@@ -64,7 +67,7 @@ public class ContaBancaria {
     }
 
     public void exibirSaldo() {
-        String msg = "Saldo da conta bancária nº %d de %s é R$ %.2f".formatted(this.numConta, this.titular, this.saldo);
+        String msg = "Saldo da conta bancária nº %d de %s é R$ %.2f".formatted(this.numConta, this.titular.getNome(), this.saldo);
         System.out.println(msg);
     }
 }
